@@ -8,7 +8,7 @@ Follow the [official installation instructions](http://docs.docker.com/installat
 
 Open a terminal and change to the new directory created above. Now execute the following command to build an image called `named_data/nfd`:
 
-    docker build -t named_data/nfd .
+    docker build -t named_data/ubuntu-14.04 ubuntu-14.04
 
 This is similar to a compilation step to transform source code (the Dockerfile) into executable code (the Docker image). The first time you run that command, it will pull the Ubuntu base image; this will take some time. Later rebuilds happen fast, thanks to Docker's snapshotting.
 
@@ -16,7 +16,7 @@ This is similar to a compilation step to transform source code (the Dockerfile) 
 
 To start a process (create a Docker container), you use the `docker run` command.
 
-    docker run named_data/nfd
+    docker run named_data/ubuntu-14.04
 
 # About Docker
 
@@ -26,7 +26,7 @@ The [interactive Docker tutorial](https://www.docker.com/tryit/) is a great way 
 
 You find the full documentation of the [`docker run` command](https://docs.docker.com/reference/run/) along with the full [command line reference](https://docs.docker.com/reference/commandline/cli/) on the [Docker documentation site](https://docs.docker.com/).
 
-Docker works best if a container runs only one process at a time, such as NFD. Bash is usually only used for exploration. To trim down the image, consider using Debian (90 MB) or Busybox (2.5 MB) as a base image instead of Ubuntu (225 MB). (There are currently no instructions for these base images, as these distributions are currently not supported / tested by the Named Data project.)
+Docker works best if a container runs only one process at a time, such as NFD. Bash is usually only used for exploration.
 
 # TODO
 
