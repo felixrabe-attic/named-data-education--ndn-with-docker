@@ -1,6 +1,6 @@
 # Docker images for NDN
 
-**WARNING: This is not production quality!** The configuration is copied from the sample and thus has no proper access control. See #5.
+**WARNING: This is not production quality!** The configuration is copied from the sample and thus has no proper access control. See [issue #5](https://github.com/named-data-education/ndn-with-docker/issues/5).
 
 This is the only issue I know of at the moment. If you see other problems that prevent this setup from being usable for (experimental) "production", please [open a new issue](https://github.com/named-data-education/ndn-with-docker/issues/new).
 
