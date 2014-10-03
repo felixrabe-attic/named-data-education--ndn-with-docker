@@ -8,7 +8,7 @@
 set -e
 cd /source
 
-git clone --recursive https://github.com/felixrabe/NFD.git
+git clone --depth 1 --recursive https://github.com/felixrabe/NFD.git
 pushd ./NFD
   git checkout -b release-build origin/ndn-start-fg
   ./waf configure

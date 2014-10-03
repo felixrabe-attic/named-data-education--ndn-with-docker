@@ -8,7 +8,7 @@
 set -e
 cd /source
 
-git clone https://github.com/named-data/ndn-cxx.git
+git clone --depth 1 https://github.com/named-data/ndn-cxx.git
 pushd ./ndn-cxx
   git checkout -b release-build ndn-cxx-0.2.0
   ./waf configure
