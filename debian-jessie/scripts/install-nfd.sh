@@ -8,13 +8,12 @@
 set -e
 cd /source
 
-git clone --depth 1 --recursive https://github.com/felixrabe/NFD.git
 pushd ./NFD
-  git checkout -b release-build origin/ndn-start-fg
-  ./waf configure
+  git checkout -b build ${NDN_NFD_VERSION}
+  ./waf configure --prefix=/
   ./waf
   ./waf install
 popd
 rm -rf ./NFD
 
-cp /usr/local/etc/ndn/nfd.conf.sample /usr/local/etc/ndn/nfd.conf
+cp /etc/ndn/nfd.conf.sample /etc/ndn/nfd.conf
