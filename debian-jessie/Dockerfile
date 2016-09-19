@@ -27,4 +27,9 @@ RUN /scripts/install-ndn-cxx.sh
 ADD ./scripts/install-nfd.sh /scripts/
 RUN /scripts/install-nfd.sh
 
-CMD /usr/local/bin/nfd-start-fg
+RUN ndnsec-keygen /localhost/operator | ndnsec-install-cert -
+# fix nfd-start for docker
+RUN perl -pi -e 's/bash/bash -i/' /bin/nfd-start
+RUN echo 'fg'>> /bin/nfd-start
+
+CMD /bin/nfd-start
