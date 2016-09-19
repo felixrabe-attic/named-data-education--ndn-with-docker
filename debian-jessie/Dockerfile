@@ -17,9 +17,11 @@ ENV NDN_NFD_VERSION NFD-0.4.1
 
 RUN mkdir -p /scripts /source
 
+RUN cd /source && git clone --recursive ${NDN_CXX_REPO}
 ADD ./scripts/install-ndn-cxx.sh /scripts/
 RUN /scripts/install-ndn-cxx.sh
 
+RUN cd /source && git clone --recursive ${NDN_NFD_REPO}
 ADD ./scripts/install-nfd.sh /scripts/
 RUN /scripts/install-nfd.sh
 

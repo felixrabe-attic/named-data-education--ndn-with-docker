@@ -8,7 +8,6 @@
 set -e
 cd /source
 
-git clone --recursive ${NDN_NFD_REPO}
 pushd ./NFD
   git checkout -b build ${NDN_NFD_VERSION}
   ./waf configure --prefix=/
@@ -17,4 +16,4 @@ pushd ./NFD
 popd
 rm -rf ./NFD
 
-cp /usr/local/etc/ndn/nfd.conf.sample /usr/local/etc/ndn/nfd.conf
+cp /etc/ndn/nfd.conf.sample /etc/ndn/nfd.conf

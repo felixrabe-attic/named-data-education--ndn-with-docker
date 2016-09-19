@@ -8,7 +8,6 @@
 set -e
 cd /source
 
-git clone ${NDN_CXX_REPO}
 pushd ./ndn-cxx
   git checkout -b build ${NDN_CXX_VERSION}
   ./waf configure --prefix=/usr
