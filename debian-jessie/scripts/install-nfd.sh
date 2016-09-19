@@ -8,10 +8,10 @@
 set -e
 cd /source
 
-git clone --depth 1 --recursive https://github.com/felixrabe/NFD.git
+git clone --recursive ${NDN_NFD_REPO}
 pushd ./NFD
-  git checkout -b release-build origin/ndn-start-fg
-  ./waf configure
+  git checkout -b build ${NDN_NFD_VERSION}
+  ./waf configure --prefix=/
   ./waf
   ./waf install
 popd

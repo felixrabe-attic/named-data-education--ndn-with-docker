@@ -8,10 +8,10 @@
 set -e
 cd /source
 
-git clone --depth 1 https://github.com/named-data/ndn-cxx.git
+git clone ${NDN_CXX_REPO}
 pushd ./ndn-cxx
-  git checkout -b release-build ndn-cxx-0.2.0
-  ./waf configure
+  git checkout -b build ${NDN_CXX_VERSION}
+  ./waf configure --prefix=/usr
   ./waf
   ./waf install
 popd

@@ -9,6 +9,12 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libpcap-dev libcrypto++-de
 # Missing dependencies: http://redmine.named-data.net/issues/2013
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y procps psmisc sudo
 
+ENV NDN_CXX_REPO https://github.com/named-data/ndn-cxx.git
+ENV NDN_CXX_VERSION ndn-cxx-0.4.1
+
+ENV NDN_NFD_REPO https://github.com/named-data/NFD.git
+ENV NDN_NFD_VERSION NFD-0.4.1
+
 RUN mkdir -p /scripts /source
 
 ADD ./scripts/install-ndn-cxx.sh /scripts/
